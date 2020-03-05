@@ -2,6 +2,8 @@
 
 Dolores is a simple [feedforward neural network](https://en.wikipedia.org/wiki/Feedforward_neural_network) implementation written in R. It uses backpropagation as learning mechanism.
 
+Documentation is [available here](https://jakubito.github.io/dolores/).
+
 ## Installation
 
 ```R
