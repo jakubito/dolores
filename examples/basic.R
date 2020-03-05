@@ -1,0 +1,40 @@
+library(dolores)
+
+# load data
+data <- read.csv('iris.csv')
+data <- data[sample(nrow(data)),] # shuffle rows
+data_train <- data[1:100,]
+data_test <- data[101:150,]
+
+# define network layer structure
+layers <- list(
+  # input layer
+  layer(
+    nodes = 4
+  ),
+  # hidden layer
+  layer(
+    nodes = 6,
+    activation = Activation$RELU
+  ),
+  # output layer
+  layer(
+    nodes = 3,
+    activation = Activation$SOFTMAX
+  )
+)
+
+# create new instance
+dolores <- Dolores$new(
+  layers,
+  learning_rate = .00001,
+  batch_size = 2,
+  epochs = 100,
+  cost = Cost$CATEGORICAL_CROSS_ENTROPY
+)
+
+# train using training data
+dolores$train(data_train)
+
+# validate using test data
+dolores$validate(data_test)

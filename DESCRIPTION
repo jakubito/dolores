@@ -1,0 +1,23 @@
+Package: dolores
+Title: A simple feedforward neural network
+Version: 0.1.0
+Authors@R: 
+    person(given = "Jakub",
+           family = "Dobes",
+           role = c("aut", "cre", "cph"),
+           email = "dobes.jakub@gmail.com")
+Description: This package offers a simple feedforward neural network implementation.
+URL: https://github.com/jakubito/dolores
+License: ISC
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    purrr,
+    zeallot,
+    R6
+RoxygenNote: 7.0.2
+Roxygen: list(markdown = TRUE)
+Collate: 
+    'helpers.R'
+    'enums.R'
+    'dolores.R'
